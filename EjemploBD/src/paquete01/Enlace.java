@@ -67,8 +67,8 @@ public class Enlace {
             String data = "Select * from Ciudad;";
             
             ResultSet rs = statement.executeQuery(data);
-            while(rs.next()){
-                Ciudad miCiudad = new Ciudad(rs.getString("nombre"),
+            while(rs.next()){// ejecuta una consulta SQL que se almacena en la variable data mientras exista 
+                Ciudad miCiudad = new Ciudad(rs.getString("nombre"),//ocupamos string para rescatar el nombre y int la poblacion 
                 rs.getInt("poblacion"));
                 lista.add(miCiudad);
             }

@@ -16,9 +16,20 @@ import paquete02.Ciudad;
 public class Principal {
     
     public static void main(String[] args) throws SQLException {
-        Enlace c = new Enlace();
-        Ciudad ciudad = new Ciudad("Cuenca", 100123);
-        c.insertarCiudad(ciudad);
+       
+        String[]ciudades = {"Quito","Guayaquil","Manta","Machala"};
+        int[]poblaciones = {14500,3400,12344,43500};
+         Enlace c = new Enlace();
+         for (int i=0;i<ciudades.length;i++){
+         Ciudad ciudad = new Ciudad(ciudades[i],poblaciones[i]);
+         
+         c.insertarCiudad(ciudad);
+         i++;
+                     
+         }
+      
+        
+        
         
         for (int i = 0; i < c.obtenerDataCiudad().size(); i++) {
             System.out.printf("%s", c.obtenerDataCiudad().get(i));
